@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <title>Similarity Check</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+        :root{
+            --white: #fafafa;
+            --black: #000;
+            --grey: gray;
+            --primary: #00ADB5;
+        }
+
+        *, *::after, *::before {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        .textarea {
+            width: 100%;
+            /* border-radius: .4rem; */
+            padding: .5rem;
+            resize: none;
+            border-color: var(--primary);
+            /* border-style: dotted; */
+        }
+
+        .textarea:focus {
+            outline: none;
+            border-width: .1rem;
+            /* border-style: solid; */
+            border-color: var(--primary);
+            box-shadow: none;
+        }
+
+        .textarea::-webkit-scrollbar {
+            width: .5em;
+            cursor: pointer;
+        }
+
+        .textarea::-webkit-scrollbar-track {
+            background-color: white;
+        }
+
+        .textarea::-webkit-scrollbar-thumb {
+            background-color: var(--primary);
+            border-radius: 2rem;
+            /* cursor: ; */
+        }
+
+        .container{
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 0 2rem;
+            /* background: magenta; */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            height: 5rem;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .navbar .brand a{
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .navbar .brand a span{
+            color: var(--primary);
+        }
+
+        .navbar .navlinks {
+            display: flex;
+            gap: 4rem;
+            font-size: .9rem;
+        }
+
+        .navbar .navlinks a{
+            color: var(--black);
+            font-weight: 500;
+            transition: color .3s ease-in-out;
+            position: relative;
+        }
+
+        .navbar .navlinks a:hover{
+            color: var(--primary);
+            transform: scaleX(100%);
+        }
+
+        .navbar .navlinks a:after{
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            transform: scaleX(0);
+            height: 5px;
+            width: 100%;
+            background-color: var(--primary);
+            transition: all .3s ease-in-out;
+        }
+
+        .navbar .navlinks a:hover:after{
+            transform: scaleX(100%);
+        }
+
+        .header .textboxWrapper{
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .header .textboxWrapper textarea{
+            height: 50vh;
+        }
+
+        .header .labels{
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 2rem;
+        }
+
+        .header .compare{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 700;
+            margin: 0 auto;
+            padding: .8rem 2rem;
+            color: var(--white);
+            background-color: var(--primary);
+            border: none;
+            border-radius: .3rem;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;    
+            cursor: pointer;
+        }
+
+        .header .compare:active{
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="brand">
+                <a href="/index.html">
+                    Similartiy <span>Checker</span>
+                </a>
+            </div>
+            <ul class="navlinks">
+                <li><a href="/index.html" class="active">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="header container">
+        <div class="labels">
+            <h4>Enter Text 1</h4>
+            <h4>Enter Text 2</h4>
+        </div>
+        <form method="POST" onSubmit = 'return validate();' class='form'>
+            <div class="textboxWrapper">
+                <textarea name="text1" id="text1" class="textarea"></textarea>
+                <textarea name="text2" id="text2" class="textarea"></textarea>
+            </div>
+            <button class="compare" type="submit" onclick = 'this.form.submit();'>
+                <!-- <img src="https://s2.svgbox.net/materialui.svg?ic=compare&color=fafafa" width="32" height="32"> -->
+                COMPARE
+            </button>
+        </form>
+        <p id='demo'>{{ variable }} </p>
+    </div>
+</body>
+</html>
