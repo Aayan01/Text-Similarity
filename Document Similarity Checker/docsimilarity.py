@@ -13,8 +13,6 @@ import numpy as np
 from nltk.tokenize import word_tokenize, sent_tokenize
 
 # function to open file & split sentences.
-
-
 def openf(filename):
     file_doc = []
     with open(filename) as f:
