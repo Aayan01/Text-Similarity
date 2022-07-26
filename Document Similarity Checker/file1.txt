@@ -1,0 +1,3 @@
+A human could easily determine that these 2 sentences convey a very similar meaning despite being written in 2 completely different formats; 
+The intersection of the 2 sentences only has one word in common, "is", and it doesn't provide any insight into how similar the sentences. 
+Nonetheless, we'd still expect a similarity algorithm to return a score that informs us that the sentences are very similar.

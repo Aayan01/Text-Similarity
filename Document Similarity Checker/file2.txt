@@ -1,0 +1,3 @@
+Despite being written in quite different styles, a human might readily tell that these two statements mean the same thing. 
+The intersection of the two sentences only contains the word "is" in common; this doesn't reveal anything about how similar the sentences are. 
+However, we would still anticipate a similarity algorithm to provide us with a score indicating that the sentences are really similar.
